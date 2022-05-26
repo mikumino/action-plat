@@ -9,10 +9,10 @@ var host
 # Public methods
 
 func _ready():
-	fill_state_dict()
+	fill_state_dict()	# on ready, every child of the state machine will be added to the states dict
 
 func tick_states(host,delta):
-	if current_state:	# if current state isn't null
+	if current_state:	# if current state exists
 		current_state._tick_state(host,self,delta)
 
 func set_state(host, next_state_id:String):

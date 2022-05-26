@@ -1,4 +1,4 @@
-extends "res://Scripts/StateMachine/State.gd"
+extends GroundedState
 
 func _enter_state(host,state_machine):
 	pass

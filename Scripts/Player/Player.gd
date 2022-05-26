@@ -24,3 +24,18 @@ func _ready():
 	state_machine.set_state(self, "idle")
 	print(state_machine.current_state)
 	
+func _physics_process(delta):
+	_get_movement_input()
+	_apply_gravty(delta)
+	_apply_movement(delta)
+	state_machine.tick_states(self, delta)
+	
+func _apply_movement(delta):
+	motion = move_and_slide(motion,Vector2.UP)
+	
+func _apply_gravty(delta):
+	motion.y += gravity * gravity_scale * delta
+	
+func _get_movement_input():
+	x_input = int(Input.is_action_pressed("player_right")) - int(Input.is_action_pressed("player_left"))
+	y_input = int(Input.is_action_pressed("player_down")) - int(Input.is_action_pressed("player_up"))
