@@ -1,8 +1,7 @@
-class_name GroundedState
-extends "res://Scripts/StateMachine/State.gd"
+extends State
 
 func _enter_state(host,state_machine):
-	pass
+	host.animation.play("idle")
 
 func _tick_state(host,state_machine,delta):
 	# Falling
@@ -16,9 +15,6 @@ func _tick_state(host,state_machine,delta):
 	# Walking
 	if host.x_input != 0:
 		state_machine.set_state(host, "walking")
-	# Idle
-	else:
-		state_machine.set_state(host, "idle")
 
 func _exit_state(host,state_machine):
 	pass

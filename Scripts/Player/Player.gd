@@ -19,6 +19,12 @@ var coyote_time := 0.1
 
 # Misc vars
 onready var state_machine = $StateMachine
+onready var animation = $AnimationPlayer
+onready var sprite = $Sprite
+
+var flags := {
+	"coyote_time_left":0.0,
+}
 
 func _ready():
 	state_machine.set_state(self, "idle")
@@ -29,6 +35,7 @@ func _physics_process(delta):
 	_apply_gravty(delta)
 	_apply_movement(delta)
 	state_machine.tick_states(self, delta)
+	$Label.text = str(state_machine.current_state)
 	
 func _apply_movement(delta):
 	motion = move_and_slide(motion,Vector2.UP)

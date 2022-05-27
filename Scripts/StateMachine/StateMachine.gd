@@ -21,7 +21,7 @@ func set_state(host, next_state_id:String):
 	if not states.has(next_state_id):
 		printerr("State Machine error: State '%s' does not exist" % next_state_id)
 	current_state = states.get(next_state_id)
-	current_state._enter_state(host,self)
+	current_state._enter_state(host, self)
 
 func fill_state_dict():
 	for state in get_children():	# your states need to be children of the state machine !!!

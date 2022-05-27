@@ -1,19 +1,15 @@
 extends State
 
 func _enter_state(host,state_machine):
-	host.animation.play("walk")
+	pass
 
 func _tick_state(host,state_machine,delta):
-	# Falling
-	if not host.is_on_floor():
-		state_machine.set_state(host, "falling")
-		return
-
-	host.flags["coyote_time_left"] = host.coyote_time
-	# Jumping
-	if Input.is_action_just_pressed("player_jump"): # or host.buffer_timer.get_time_left() > 0
-		host.motion.y = -host.jump_power
-		state_machine.set_state(host, "jumping")
+	if host.is_on_floor():
+		host.can_coyote = true
+		if host.motion.x != 0: # set the state to walking if they're moving
+			state_machine.set_state(host, "walking")
+		else: # return to idle otherwise
+			state_machine.set_state(host, "idle")
 		return
 	# Horizontal movement
 	var velocity = host.acceleration * host.x_input * delta
@@ -27,8 +23,5 @@ func _tick_state(host,state_machine,delta):
 	else:
 		velocity = host.acceleration * sign(host.motion.x) * delta * 2
 		host.motion.x -= velocity if abs(velocity) < abs(host.motion.x) else host.motion.x
-	# Idling
-	if host.motion.x == 0:
-		state_machine.set_state(host, "idle")
 func _exit_state(host,state_machine):
 	pass
