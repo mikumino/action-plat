@@ -6,21 +6,24 @@ var gravity = 5
 var gravity_scale = 100
 
 # Movement vars
-var acceleration := 750.0
-var move_speed := 80.0
-var jump_power := 160.0
-var min_jump_power := 40.0
+var acceleration := 10
+var move_speed := 100
+var jump_power := 160
+var min_jump_power := 40
 var x_input := 0
 var y_input := 0
 
-# QOL movement vars
+# Addl. movement vars
 var can_coyote = true
 var coyote_time := 0.1
+var direction := Vector2(1,0)
+var can_dash = true
 
 # Misc vars
 onready var state_machine = $StateMachine
 onready var animation = $AnimationPlayer
 onready var sprite = $Sprite
+onready var buffer_timer = $BufferTimer
 
 var flags := {
 	"coyote_time_left":0.0,
@@ -28,6 +31,7 @@ var flags := {
 
 func _ready():
 	state_machine.set_state(self, "idle")
+	$Camera._set_limits()
 	print(state_machine.current_state)
 	
 func _physics_process(delta):

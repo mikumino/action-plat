@@ -10,16 +10,6 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
-"class": "Air",
-"language": "GDScript",
-"path": "res://Scripts/Player/AirState.gd"
-}, {
-"base": "Node",
-"class": "GroundedState",
-"language": "GDScript",
-"path": "res://Scripts/Player/GroundedState.gd"
-}, {
-"base": "Node",
 "class": "State",
 "language": "GDScript",
 "path": "res://Scripts/StateMachine/State.gd"
@@ -30,8 +20,6 @@ _global_script_classes=[ {
 "path": "res://Scripts/StateMachine/StateMachine.gd"
 } ]
 _global_script_class_icons={
-"Air": "",
-"GroundedState": "",
 "State": "",
 "StateMachine": ""
 }
@@ -97,7 +85,12 @@ player_down={
 }
 player_jump={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":67,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":88,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+player_dash={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
