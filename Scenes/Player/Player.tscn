@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Sprites/Player/player.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scripts/Player/JumpingState.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/Player/FallingState.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Player/DashingState.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/Player/DashJumpingState.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.5, 9 )
@@ -145,6 +146,9 @@ id = "jumping"
 [node name="Dashing" type="Node" parent="StateMachine"]
 script = ExtResource( 9 )
 id = "dashing"
+
+[node name="DashJumping" type="Node" parent="StateMachine"]
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="."]
 visible = false

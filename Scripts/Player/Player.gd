@@ -17,7 +17,6 @@ var y_input := 0
 var can_coyote = true
 var coyote_time := 0.1
 var direction := Vector2(1,0)
-var can_dash = true
 
 # Misc vars
 onready var state_machine = $StateMachine
@@ -27,6 +26,7 @@ onready var buffer_timer = $BufferTimer
 
 var flags := {
 	"coyote_time_left":0.0,
+	
 }
 
 func _ready():
