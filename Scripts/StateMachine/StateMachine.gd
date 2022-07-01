@@ -27,4 +27,5 @@ func fill_state_dict():
 	for state in get_children():	# your states need to be children of the state machine !!!
 		if state.id:
 			states[state.id] = state
+			print(state.id)
 	

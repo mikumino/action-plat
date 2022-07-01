@@ -149,8 +149,8 @@ id = "dashing"
 
 [node name="DashJumping" type="Node" parent="StateMachine"]
 script = ExtResource( 10 )
+id = "dashjumping"
 
 [node name="Label" type="Label" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 14.0

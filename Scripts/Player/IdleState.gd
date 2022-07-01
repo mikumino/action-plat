@@ -2,6 +2,7 @@ extends State
 
 func _enter_state(host,state_machine):
 	host.animation.play("idle")
+	host.motion.x = 0
 
 func _tick_state(host,state_machine,delta):
 	# Falling
