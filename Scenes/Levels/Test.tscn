@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Sprites/Env/TestTilesets/tileset_ground.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Objects/Hurtable.tscn" type="PackedScene" id=3]
 
 [node name="Test" type="Node2D"]
+
+[node name="Hurtable" parent="." instance=ExtResource( 3 )]
+position = Vector2( 60, 135 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 25, 134 )
