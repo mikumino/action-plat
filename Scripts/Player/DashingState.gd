@@ -18,7 +18,7 @@ func _tick_state(host,state_machine,delta):
 		host.motion.y = -host.jump_power
 		dash_jumping = true
 		state_machine.set_state(host, "dashjumping")
-	if dash_frames == 0 and !dash_jumping:		
+	if dash_frames == 0 and !dash_jumping:
 		# Air
 		if not host.is_on_floor():
 			state_machine.set_state(host, "falling")

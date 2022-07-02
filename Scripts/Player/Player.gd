@@ -23,12 +23,12 @@ onready var state_machine = $StateMachine
 onready var action_state_machine = $ActionStateMachine
 onready var animation = $AnimationPlayer
 onready var action_animation = $ActionAnimationPlayer
+onready var attack_hitbox = $AttackHitbox
 onready var sprite = $Sprite
 onready var buffer_timer = $BufferTimer
 
 var flags := {
 	"coyote_time_left":0.0,
-	
 }
 
 func _ready():

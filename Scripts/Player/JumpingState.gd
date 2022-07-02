@@ -24,9 +24,13 @@ func _tick_state(host,state_machine,delta):
 	if host.x_input != 0:
 		if host.x_input > 0:
 			host.sprite.flip_h = false
+			host.attack_hitbox.position.x = 15
+			host.direction = Vector2(1, 0)
 			host.motion.x = min(host.motion.x + host.acceleration, host.move_speed)
 		else:
 			host.sprite.flip_h = true
+			host.attack_hitbox.position.x = -15
+			host.direction = Vector2(-1, 0)
 			host.motion.x = max(host.motion.x - host.acceleration, -host.move_speed)
 	else:
 		if host.motion.x > 0:

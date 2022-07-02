@@ -7,7 +7,16 @@
 [node name="Test" type="Node2D"]
 
 [node name="Hurtable" parent="." instance=ExtResource( 3 )]
-position = Vector2( 60, 135 )
+position = Vector2( 59, 135 )
+
+[node name="Hurtable2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 90, 123 )
+
+[node name="Hurtable3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 167, 99 )
+
+[node name="Hurtable4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 139, 135 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 25, 134 )

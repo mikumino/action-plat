@@ -172,15 +172,14 @@ position = Vector2( -0.5, 1 )
 shape = SubResource( 1 )
 
 [node name="AttackHitbox" type="Area2D" parent="."]
+position = Vector2( 15, 0 )
 
 [node name="Sprite" type="Sprite" parent="AttackHitbox"]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 15, 1 )
 scale = Vector2( 0.032, 0.024 )
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2( 15, 1 )
 shape = SubResource( 7 )
 disabled = true
 
