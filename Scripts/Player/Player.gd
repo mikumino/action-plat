@@ -20,17 +20,20 @@ var direction := Vector2(1,0)
 
 # Misc vars
 onready var state_machine = $StateMachine
+onready var action_state_machine = $ActionStateMachine
 onready var animation = $AnimationPlayer
+onready var action_animation = $ActionAnimationPlayer
+onready var attack_hitbox = $AttackHitbox
 onready var sprite = $Sprite
 onready var buffer_timer = $BufferTimer
 
 var flags := {
 	"coyote_time_left":0.0,
-	
 }
 
 func _ready():
 	state_machine.set_state(self, "idle")
+	action_state_machine.set_state(self, "inactive")
 	$Camera._set_limits()
 	print(state_machine.current_state)
 	
@@ -39,7 +42,8 @@ func _physics_process(delta):
 	_apply_gravty(delta)
 	_apply_movement(delta)
 	state_machine.tick_states(self, delta)
-	$Label.text = str(state_machine.current_state)
+	action_state_machine.tick_states(self, delta)
+	$Label.text = str(action_state_machine.current_state)
 	
 func _apply_movement(delta):
 	motion = move_and_slide(motion,Vector2.UP)
