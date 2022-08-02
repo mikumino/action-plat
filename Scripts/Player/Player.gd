@@ -24,6 +24,7 @@ onready var action_state_machine = $ActionStateMachine
 onready var animation = $AnimationPlayer
 onready var action_animation = $ActionAnimationPlayer
 onready var attack_hitbox = $AttackHitbox
+onready var attack_hitbox_collision = $AttackHitbox/CollisionShape2D
 onready var sprite = $Sprite
 onready var buffer_timer = $BufferTimer
 
